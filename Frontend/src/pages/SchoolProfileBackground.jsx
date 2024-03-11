@@ -8,14 +8,16 @@ import PastSeminars from "./School/PastSeminars.jsx";
 
 export default function SchoolProfileBackground() {
     return(
-       <>
+        <>
             <SchoolNavbar />
-            <Routes>
-                <Route path="/school/overview" element={<SchoolOverview />} />
-                <Route path="/school/send-seminar-requests" element={<SendSeminarRequests />} />
-                <Route path="/school/upcoming-seminars" element={<UpcomingSeminars />} />
-                <Route path="/school/past-seminars" element={<PastSeminars />} />
-            </Routes>
-    </>
+            <div className="ml-64"> {/* Adjust margin left to match the width of the SchoolNavbar */}
+                <Routes>
+                    <Route path="/" element={<SchoolOverview />} />
+                    <Route path="/send-seminar-requests" element={<SendSeminarRequests />} />
+                    <Route path="/upcoming-seminars" element={<UpcomingSeminars />} />
+                    <Route path="/past-seminars" element={<PastSeminars />} />
+                </Routes>
+            </div>
+        </>
     )
 }
