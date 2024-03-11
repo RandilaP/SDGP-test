@@ -26,20 +26,24 @@ const getSeminar = async (req, res) => {
 
 //create a seminar
 const createSeminar = async (req, res) => {
-    const { school, description, organization} = req.body;
+    const { subject,
+        grade,
+        date,
+        time,
+        expVolCount,
+        description,
+        status} = req.body;
 
     let emptyFields = [];
 
-    if(!school) {
-        emptyFields.push('school');
-    }
+    if(!subject) emptyFields.push('subject');
+    if(!grade) emptyFields.push('grade');
+    if(!date) emptyFields.push('date');
+    if(!time) emptyFields.push('time');
+    if(!expVolCount) emptyFields.push('expVolCount');
+    if(!description) emptyFields.push('description');
+    if(!status) emptyFields.push('status');
 
-    if(!description) {
-        emptyFields.push('description');
-    }
-    if(!organization) {
-        emptyFields.push('organization');
-    }
 
     if(emptyFields.length > 0) {
         return res.status(400).json({error:`The following fields are required'`, emptyFields});
@@ -48,9 +52,13 @@ const createSeminar = async (req, res) => {
     //add to database
     try{
         const seminar = await Seminar.create({
-            school,
+            subject,
+            grade,
+            date,
+            time,
+            expVolCount,
             description,
-            organization
+            status
         });
         res.status(200).json(seminar);
     }catch (error) {
