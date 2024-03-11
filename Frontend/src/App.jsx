@@ -11,7 +11,7 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<ProfSelect />} />
-                <Route path="/school" element={<SchoolProfileBackground />} />
+                <Route path="/school/*" element={<SchoolProfileBackground />} />
                 <Route path="/volunteer" element={<VolunteerProfileBackground />} />
                 <Route path="/organization" element={<OrganizationProfileBackground />} />
             </Routes>
