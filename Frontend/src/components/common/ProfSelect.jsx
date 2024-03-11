@@ -1,24 +1,8 @@
-import { Link, useNavigate } from "react-router-dom"; // Import Link from React Router
-import { Progress } from "@material-tailwind/react";
-import Homepage from "../Common/homepage";
+import { Link } from "react-router-dom"; // Import Link from React Router
+// import { Progress } from "@material-tailwind/react";
+// import Homepage from "../Common/homepage";
 import React, { useState, useEffect } from "react";
 
-// Reusable button component
-function RoleButton({ roleName, to, imageSrc }) {
-  return (
-    <Link
-      to={to}
-      className="flex flex-col items-center border border-[#F8F9FB] rounded-lg mt-8 p-4 w-32 h-32 text-sm text-[#002358]"
-    >
-      <img
-        src={imageSrc}
-        alt={roleName}
-        className="w-8 h-10 rounded-full mt-4 mb-2" // Adjust image size if needed
-      />
-      <span>{roleName}</span>
-    </Link>
-  );
-}
 
 function ProfSelect() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -74,23 +58,44 @@ function ProfSelect() {
           </h1>
 
           <div className="flex flex-wrap justify-center mt-2 gap-4">
-            <RoleButton
-              roleName="Organization"
-              to="/Organization/Create-Owner"
-              imageSrc="/src/assets/person.png"
-            />
-            <RoleButton
-              roleName="Volunteer"
-              to="/Volunteer/Sign-up"
-              imageSrc="/src/assets/person.png"
-            />
-            <RoleButton
-              roleName="School"
-              to="/School/Sign-up"
-              imageSrc="/src/assets/person.png"
-            />
+            <Link
+              to="/organization"
+              className="flex flex-col justify-center items-center w-[80%] sm:w-[20%] bg-custom-purple hover:bg-white text-white hover:text-custom-purple hover:border border-custom-purple py-2 px-3 rounded text-sm"
+              style={{ fontFamily: "Saira" }}
+            >
+              <img
+                src="../../assets/person.png"
+                alt="Organization"
+                className="w-20 h-20"
+              />
+              <span>Organization</span>
+            </Link>
+            <Link
+              to="/school"
+              className="flex flex-col justify-center items-center w-[80%] sm:w-[20%] bg-custom-purple hover:bg-white text-white hover:text-custom-purple hover:border border-custom-purple py-2 px-3 rounded text-sm"
+              style={{ fontFamily: "Saira" }}
+            >
+              <img
+                src="../../assets/person.png"
+                alt="School"
+                className="w-20 h-20"
+              />
+              <span>School</span>
+            </Link>
+            <Link
+              to="/volunteer"
+              className="flex flex-col justify-center items-center w-[80%] sm:w-[20%] bg-custom-purple hover:bg-white text-white hover:text-custom-purple hover:border border-custom-purple py-2 px-3 rounded text-sm"
+              style={{ fontFamily: "Saira" }}
+            >
+              <img
+                src="../../assets/person.png"
+                alt="Volunteer"
+                className="w-20 h-20"
+              />
+              <span>Volunteer</span>
+            </Link>
           </div>
-          <Link
+          {/* <Link
             to="/next"
             className="mt-8 flex justify-center items-center w-[80%] sm:w-[20%] bg-custom-purple hover:bg-white text-white hover:text-custom-purple hover:border border-custom-purple py-2 px-3 rounded text-sm"
             style={{ fontFamily: "Saira" }}
@@ -100,7 +105,7 @@ function ProfSelect() {
           <div className="flex w-full gap-4">
             <Progress value={50} color="purple" />
           </div>
-          <div className="mt-2 text-[#4B5563] text-sm">Step 01 of 03</div>
+          <div className="mt-2 text-[#4B5563] text-sm">Step 01 of 03</div> */}
         </div>
       </div>
     </div>
