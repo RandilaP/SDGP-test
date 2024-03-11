@@ -11,14 +11,14 @@ const seminarSchema = new Schema({
         type: String,
         required: true
     },
-    // date: {
-    //     type: Date,
-    //     required: true
-    // },
-    // time: {
-    //     type: String,
-    //     required: true
-    // },
+    date: {
+        type: Date,
+        required: true
+    },
+    time: {
+        type: String,
+        required: true
+    },
     expVolCount: {
         type: Number,
         required: true
