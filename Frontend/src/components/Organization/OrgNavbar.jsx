@@ -1,10 +1,18 @@
-import React from 'react';
+// import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SchoolNavbar = () => {
+const OrgNavbar = () => {
     return (
-        <nav className="bg-gray-800 w-64 flex flex-col h-screen fixed left-0 top-0 z-10">
-            <div className="p-4 text-white font-semibold">School Name</div>
+        <nav className="bg-gray-800 w-64 flex h-screen flex-col fixed left-0 top-0 z-10">
+            <div className="p-4 text-white font-semibold">Volunteer Name</div>
+            <div className="mb-4">
+                <Link
+                    to="/"
+                    className="text-white py-2 px-4 rounded hover:bg-gray-700 block"
+                >
+                    Main Menu
+                </Link>
+            </div>
             <ul className="flex flex-col gap-2 p-4">
                 <li>
                     <Link
@@ -16,10 +24,18 @@ const SchoolNavbar = () => {
                 </li>
                 <li>
                     <Link
-                        to="/organization/send-seminar-requests"
+                        to="/organization/volunteer-requests"
                         className="text-white py-2 px-4 rounded hover:bg-gray-700"
                     >
-                        Send Seminar Requests
+                        Volunteer Requests
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        to="/organization/seminar-requests"
+                        className="text-white py-2 px-4 rounded hover:bg-gray-700"
+                    >
+                        Seminar Requests
                     </Link>
                 </li>
                 <li>
@@ -43,4 +59,4 @@ const SchoolNavbar = () => {
     );
 };
 
-export default SchoolNavbar;
+export default OrgNavbar;

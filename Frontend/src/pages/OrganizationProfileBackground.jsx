@@ -1,19 +1,21 @@
 import { Routes, Route } from "react-router-dom";
 
-import SchoolNavbar from "../components/School/SchoolNavbar.jsx";
-import SchoolOverview from "./School/SchoolOverview.jsx";
-import SendSeminarRequests from "./School/SendSeminarRequests.jsx";
-import UpcomingSeminars from "./School/UpcomingSeminars.jsx";
-import PastSeminars from "./School/PastSeminars.jsx";
+import OrgNavbar from "../components/Organization/OrgNavbar.jsx";
+import OrganizationOverview from "./Organization/OrganizationOverview.jsx";
+import PastSeminars from "./Organization/PastSeminars.jsx";
+import UpcomingSeminars from "./Organization/UpcomingSeminars.jsx";
+import SeminarRequests from "./Organization/SeminarRequests.jsx";
+import VolunteerRequests from "./Organization/VolunteerRequests.jsx";
 
-export default function ProfileBackground() {
+export default function OrganizationProfileBackground() {
     return(
-        <>
-            <SchoolNavbar />
-            <div className="ml-64"> {/* Adjust margin left to match the width of the SchoolNavbar */}
+        <>x
+            <OrgNavbar />
+            <div className="ml-64">
                 <Routes>
-                    <Route path="/" element={<SchoolOverview />} />
-                    <Route path="/send-seminar-requests" element={<SendSeminarRequests />} />
+                    <Route path="/" element={<OrganizationOverview />} />
+                    <Route path="/seminar-requests" element={<SeminarRequests />} />
+                    <Route path="/volunteer-requests" element={<VolunteerRequests />} />
                     <Route path="/upcoming-seminars" element={<UpcomingSeminars />} />
                     <Route path="/past-seminars" element={<PastSeminars />} />
                 </Routes>
