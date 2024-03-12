@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const OrgNavbar = () => {
     return (
         <nav className="bg-gray-800 w-64 flex h-screen flex-col fixed left-0 top-0 z-10">
-            <div className="p-4 text-white font-semibold">Volunteer Name</div>
+            <div className="p-4 text-white font-semibold">Organization Name</div>
             <div className="mb-4">
                 <Link
                     to="/"
