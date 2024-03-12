@@ -5,6 +5,12 @@ const SchoolNavbar = () => {
     return (
         <nav className="bg-gray-800 w-64 flex flex-col h-screen fixed left-0 top-0 z-10">
             <div className="p-4 text-white font-semibold">School Name</div>
+            <Link
+                to="/"
+                className="text-white py-2 px-4 rounded hover:bg-gray-700 block"
+            >
+                Main Menu
+            </Link>
             <ul className="flex flex-col gap-2 p-4">
                 <li>
                     <Link

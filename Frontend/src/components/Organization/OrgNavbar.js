@@ -8,7 +8,7 @@ const SchoolNavbar = () => {
             <ul className="flex flex-col gap-2 p-4">
                 <li>
                     <Link
-                        to="/school/"
+                        to="/organization/"
                         className="text-white py-2 px-4 rounded hover:bg-gray-700"
                     >
                         Overview
@@ -16,7 +16,7 @@ const SchoolNavbar = () => {
                 </li>
                 <li>
                     <Link
-                        to="/school/send-seminar-requests"
+                        to="/organization/send-seminar-requests"
                         className="text-white py-2 px-4 rounded hover:bg-gray-700"
                     >
                         Send Seminar Requests
@@ -24,7 +24,7 @@ const SchoolNavbar = () => {
                 </li>
                 <li>
                     <Link
-                        to="/school/upcoming-seminars"
+                        to="/organization/upcoming-seminars"
                         className="text-white py-2 px-4 rounded hover:bg-gray-700"
                     >
                         Upcoming Seminars
@@ -32,7 +32,7 @@ const SchoolNavbar = () => {
                 </li>
                 <li>
                     <Link
-                        to="/school/past-seminars"
+                        to="/organization/past-seminars"
                         className="text-white py-2 px-4 rounded hover:bg-gray-700"
                     >
                         Past Seminars
