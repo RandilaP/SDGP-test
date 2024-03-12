@@ -1,14 +1,13 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SchoolNavbar = () => {
+const VolNavbar = () => {
     return (
         <nav className="bg-gray-800 w-64 flex flex-col h-screen fixed left-0 top-0 z-10">
-            <div className="p-4 text-white font-semibold">School Name</div>
+            <div className="p-4 text-white font-semibold">Volunteer Name</div>
             <ul className="flex flex-col gap-2 p-4">
                 <li>
                     <Link
-                        to="/school/"
+                        to="/volunteer/"
                         className="text-white py-2 px-4 rounded hover:bg-gray-700"
                     >
                         Overview
@@ -16,15 +15,7 @@ const SchoolNavbar = () => {
                 </li>
                 <li>
                     <Link
-                        to="/school/send-seminar-requests"
-                        className="text-white py-2 px-4 rounded hover:bg-gray-700"
-                    >
-                        Send Seminar Requests
-                    </Link>
-                </li>
-                <li>
-                    <Link
-                        to="/school/upcoming-seminars"
+                        to="/volunteer/upcoming-seminars"
                         className="text-white py-2 px-4 rounded hover:bg-gray-700"
                     >
                         Upcoming Seminars
@@ -32,7 +23,15 @@ const SchoolNavbar = () => {
                 </li>
                 <li>
                     <Link
-                        to="/school/past-seminars"
+                        to="/volunteer/reviews"
+                        className="text-white py-2 px-4 rounded hover:bg-gray-700"
+                    >
+                        Reviews
+                    </Link>
+                </li>
+                <li>
+                    <Link
+                        to="/volunteer/past-seminars"
                         className="text-white py-2 px-4 rounded hover:bg-gray-700"
                     >
                         Past Seminars
@@ -43,4 +42,4 @@ const SchoolNavbar = () => {
     );
 };
 
-export default SchoolNavbar;
+export default VolNavbar;
