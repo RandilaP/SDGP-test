@@ -22,12 +22,13 @@ const PastSeminars = () => {
 
     // Filter out past seminars
     const pastSeminars = seminarsData.filter(seminar => seminar.date < today);
+    const acceptedSeminars = pastSeminars.filter(seminar => seminar.status === 'accepted');
 
     return (
         <div className="container mx-auto">
             <h1 className="text-3xl font-bold mb-4">Past Seminars</h1>
             <div>
-                {pastSeminars.map((seminar) => (
+                {acceptedSeminars.map((seminar) => (
                     <SeminarCard
                         key={seminar._id}
                         subject={seminar.subject}
