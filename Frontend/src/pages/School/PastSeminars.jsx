@@ -1,27 +1,27 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import SeminarCard from '../../components/School/SeminarCard.jsx';
 import axios from "axios";
+import useSeminarContext from '../../hooks/useSeminarContext.js';
 
 const PastSeminars = () => {
-    const [seminarsData, setSeminarsData] = useState([]);
+    const { seminars, dispatch } = useSeminarContext();
 
     useEffect(() => {
         const fetchSeminars = async () => {
-            const api = 'http://localhost:4000/api/seminars/';
             try {
-                const response = await axios.get(api);
-                setSeminarsData(response.data);
+                const response = await axios.get('http://localhost:4000/api/seminars/');
+                dispatch({ type: 'SET_SEMINARS', payload: response.data });
             } catch (error) {
                 console.error('Error fetching seminars:', error);
             }
         };
         fetchSeminars();
-    }, []);
+    }, [dispatch]);
 
     const today = new Date().toISOString().split('T')[0];
 
     // Filter out past seminars
-    const pastSeminars = seminarsData.filter(seminar => seminar.date < today);
+    const pastSeminars = seminars ? seminars.filter(seminar => seminar.date < today) : [];
     const acceptedSeminars = pastSeminars.filter(seminar => seminar.status === 'accepted');
 
     return (

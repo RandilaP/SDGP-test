@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import {SeminarContextProvider} from "./context/SeminarContext.jsx";
 
 import ProfSelect from "./components/common/ProfSelect.jsx";
 import SchoolProfileBackground from "./pages/SchoolProfileBackground.jsx";
@@ -8,6 +8,7 @@ import OrganizationProfileBackground from "./pages/OrganizationProfileBackground
 function App() {
   return (
     <>
+        <SeminarContextProvider>
         <Router>
             <Routes>
                 <Route path="/" element={<ProfSelect />} />
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/organization/*" element={<OrganizationProfileBackground />} />
             </Routes>
         </Router>
+        </SeminarContextProvider>
     </>
   );
 }

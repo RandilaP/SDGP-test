@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import useSeminarContext from '../../hooks/useSeminarContext.js';
+
 
 const SendSeminarRequests = () => {
+    const { dispatch } = useSeminarContext();
+
     const [subject, setSubject] = useState('');
     const [grade, setGrade] = useState('');
     const [date, setDate] = useState('');
@@ -34,6 +38,13 @@ const SendSeminarRequests = () => {
 
             if (response.ok) {
                 console.log('Seminar request sent successfully!');
+                setSubject('');
+                setGrade('');
+                setDate('');
+                setTime('');
+                setExpVolCount('');
+                setDescription('');
+                dispatch({ type: 'CREATE_SEMINAR', payload: seminarRequest });
             } else {
                 console.error('Failed to send seminar request');
             }

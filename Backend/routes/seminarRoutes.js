@@ -1,6 +1,8 @@
 const express = require('express');
 const {
     getSeminar,
+    getUpcomingSeminars,
+    getPastSeminars,
     getSeminars,
     createSeminar,
     updateSeminar,
@@ -10,6 +12,10 @@ const router = express.Router();
 
 //get all seminars
 router.get('/', getSeminars);
+
+router.get('/upcoming', getUpcomingSeminars);
+
+router.get('/past', getPastSeminars);
 
 //get single seminar
 router.get('/:id', getSeminar);

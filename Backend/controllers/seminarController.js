@@ -7,6 +7,19 @@ const getSeminars = async (req, res) => {
     res.status(200).json(seminars);
 }
 
+const today = new Date().toISOString().split('T')[0];
+const getUpcomingSeminars = async (req, res) => {
+    const seminars = await Seminar.find({status: 'accepted'}).sort({createdAt: -1});
+    const upcomingSeminars = seminars.filter(seminar => seminar.date >= today);
+    res.status(200).json(upcomingSeminars);
+}
+
+const getPastSeminars = async (req, res) => {
+    const seminars = await Seminar.find({status: 'accepted'}).sort({createdAt: -1});
+    const pastSeminars = seminars.filter(seminar => seminar.date < today);
+    res.status(200).json(pastSeminars);
+}
+
 //get single seminar
 const getSeminar = async (req, res) => {
     const { id } = req.params;
@@ -104,6 +117,8 @@ const updateSeminar = async (req, res) => {
 
 module.exports = {
     getSeminars,
+    getUpcomingSeminars,
+    getPastSeminars,
     getSeminar,
     createSeminar,
     deleteSeminar,
